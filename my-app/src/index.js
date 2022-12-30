@@ -1,10 +1,10 @@
 import ReactDOM from 'react-dom'
 
-import App2 from './App2'
+import App4 from './App4'
 
 // ReactDOM.render(arg1, arg2)
 ReactDOM.render(
-    <App2 />, 
+    <App4 />, 
     document.getElementById('root')
 )
 
