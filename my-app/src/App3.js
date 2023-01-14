@@ -1,23 +1,35 @@
 import React, { Component } from 'react'
 
 export default class App2 extends Component {
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
         this.state = {
-            num:1
+            name1:'yihua',
+            name2:'ziheng'
         }
     }
+    
   render() {
     return (
       <div>
-        <h2>num is: {this.state.num}</h2>
-        <button onClick={()=>this.setState({num: this.state.num+1})}>increase1</button>
-        <button onClick={this.addNum.bind(this)}>increase2</button>
-        <button onClick={()=>this.addNum()}>increase3</button>
+        <h2>Hi {this.state.name1}</h2>
+        <button onClick={()=> {
+          this.setState(
+            this.returnNewState
+            ,()=>console.log(this.state.name1)
+          )
+          
+        }}
+        >changename</button>
     </div>
     )
   }
-  addNum(){
-    this.setState({num: this.state.num + 1})
+  
+  returnNewState() {
+    let newState = {
+      name1: this.state.name2,
+      name2: this.state.name1
+    }
+    return newState
   }
 }
