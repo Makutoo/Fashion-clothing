@@ -2,6 +2,7 @@ import { Component } from 'react';
 
 import './App.css';
 import CardList from './components/card-list/card-list-component';
+import SearchBox from './components/search-box/search-box-component';
 
 class App extends Component {
   constructor() {
@@ -24,7 +25,7 @@ class App extends Component {
       )
   }
 
-  onSearchChange = (event) => {
+  onSearchChange = (event) => { // this functino update the state
     //console.log(event.target.value);
     //从event中获取search bar中
     const newSearchField = event.target.value.toLocaleLowerCase()
@@ -46,13 +47,11 @@ class App extends Component {
     });
     return (
       <div className='App'>
-        <input
-          className='search-box'
-          type='search'
+        <SearchBox 
+          onChangeHandler={onSearchChange} 
           placeholder='search monsters'
-          onChange={ onSearchChange }
-        ></input>
-        
+          className='search-box'
+        />
         <CardList monsters={filteredMonsters}/>
       </div>
     )
