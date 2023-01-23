@@ -16,6 +16,8 @@ const App = () => { // react will rerun this function if need rerender
   const [monsters, setMonsters] = useState([])
   const [filteredMonsters, setFilteredMonsters] = useState(monsters)
 
+  console.log("rerender")
+  
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then((response) => response.json())
